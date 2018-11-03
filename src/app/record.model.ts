@@ -1,10 +1,10 @@
 export class SensorRecord {
-  temp: number;
+  temperature: number;
   latitude: string;
   longitude: string;
 
-  constructor(temp: number, latitude: string, longitude: string) {
-    this.temp = temp;
+  constructor(temperature: number, latitude: string, longitude: string) {
+    this.temperature = temperature;
     this.latitude = latitude;
     this.longitude = longitude;
   }

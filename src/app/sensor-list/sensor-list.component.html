@@ -1,0 +1,24 @@
+<div class="container">
+  <div class="row">
+    <div class="col">
+      <table class="table table-striped"  >
+        <thead>
+        <tr>
+          <th scope="col">#</th>
+          <th scope="col">Latitude</th>
+          <th scope="col">Longitude</th>
+          <th scope="col">Temperature</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr *ngFor="let record of list; let i = index">
+          <th scope="row">{{i}}</th>
+          <td>{{record.latitude}}</td>
+          <td>{{record.longitude}}</td>
+          <td>{{record.temperature}}</td>
+        </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
