@@ -8,13 +8,35 @@ import {FormControl, FormGroup} from '@angular/forms';
 })
 export class RecordFormComponent implements OnInit {
 
-  profileForm = new FormGroup({
-    firstName: new FormControl(''),
-    lastName: new FormControl(''),
-  });
+  latitudeDirections = [];
+  longitudeDirections = [];
+  record;
   constructor() { }
 
   ngOnInit() {
+    this.latitudeDirections = ['S', 'N'];
+    this.longitudeDirections = ['W', 'E'];
+
+    this.record = new FormGroup({
+      latitude : new FormGroup({
+        degrees: new FormControl(''),
+        minutes: new FormControl(''),
+        seconds: new FormControl(''),
+        direction: new FormControl(''),
+      }),
+      longitude : new FormGroup({
+        degrees: new FormControl(''),
+        minutes: new FormControl(''),
+        seconds : new FormControl(''),
+        direction: new FormControl(''),
+      }),
+      temperature : new FormControl('')
+    });
+  }
+
+  onSubmit() {
+    // TODO: Use EventEmitter with form value
+    console.warn(this.record.value);
   }
 
 }

@@ -1,13 +1,70 @@
-<form [formGroup]="profileForm">
+<form [formGroup]="record" (ngSubmit)="onSubmit()">
+
+
+  <div formGroupName="latitude">
+    <h4>Latitude</h4>
+
+    <label>
+      Degrees
+      <input type="text" formControlName="degrees">
+    </label>
+    <br>
+    <label>
+      Minutes
+      <input type="text" formControlName="minutes">
+    </label>
+    <br>
+    <label>
+      Seconds
+      <input type="text" formControlName="seconds">
+    </label>
+    <br>
+    <label>
+      Direction
+      <select formControlName="direction">
+        <option *ngFor="let option of latitudeDirections">
+          {{option}}
+        </option>
+      </select>
+    </label>
+  </div>
+
+  <div formGroupName="longitude">
+    <h4>Longitude</h4>
+
+    <label>
+      Degrees
+      <input type="text" formControlName="degrees">
+    </label>
+    <br>
+
+    <label>
+      Minutes
+      <input type="text" formControlName="minutes">
+    </label>
+    <br>
+
+    <label>
+      Seconds
+      <input type="text" formControlName="seconds">
+    </label>
+    <br>
+
+    <label>
+      Direction
+      <select formControlName="direction">
+        <option *ngFor="let option of longitudeDirections">
+          {{option}}
+        </option>
+      </select>
+    </label>
+  </div>
 
   <label>
-    First Name:
-    <input type="text" formControlName="firstName">
+    Temperature
+    <input type="text" formControlName="temperature">
   </label>
 
-  <label>
-    Last Name:
-    <input type="text" formControlName="lastName">
-  </label>
+  <button type="submit" [disabled]="!record.valid">Submit</button>
 
 </form>
