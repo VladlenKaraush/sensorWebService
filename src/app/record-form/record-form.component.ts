@@ -45,12 +45,12 @@ export class RecordFormComponent implements OnInit {
     const recordDTO: SensorRecord = {
       latitude: val.latitude.degrees + '° ' + val.latitude.minutes + '′ ' + val.latitude.seconds + '″ ' + val.latitude.direction,
       longitude: val.longitude.degrees + '° ' + val.longitude.minutes + '′ ' + val.longitude.seconds + '″ ' + val.longitude.direction,
-      temperature: val.temperature
+      temperature: val.temperature,
+      city: ''
     };
     console.warn(recordDTO);
     const ans = this.server.storeRecord(recordDTO);
     console.warn(ans);
-
   }
 
 }

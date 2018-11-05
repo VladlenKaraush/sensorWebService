@@ -16,10 +16,11 @@ export class SensorListComponent implements OnInit {
   }
 
   ngOnInit() {
-     this.fetchRecords();
+     this.server.updateRecords();
      this.server.recordsUpdated.subscribe(
        (records: SensorRecord[]) => {
          this.list = records;
+         console.warn('recieved new list of records');
        }
      );
   }
