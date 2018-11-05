@@ -46,4 +46,4 @@ Floating point values can be used.
 * Google map API
 
 ##Screenshot
-![](/Users/vladlenkaraush/prog/sensorService/img/screen.jpg)
+![](img/screen.jpg)
