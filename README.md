@@ -3,7 +3,6 @@
 REST API service for accumulating sensory input.  
 Keeps only last 10 entries, automatically determines city by coordinates via google map API.  
 
-##Screenshot
 ![](img/screen.jpg)
 
 ## How to run
@@ -13,14 +12,17 @@ REST server opens on 8080 port, angular UI on 4200 port
 
 ## Tests
 
-Tests will execute automatically when building project
+Tests will execute automatically when building project  
+Tests themselves could be found in java project in /backend folder
 
 
-##Validation
+## Validation
 
 Input validates on both sides: on client for more responsive experience, on server for validation on direct requests.
 
-##Direct server usage
+## Direct server usage
+Server repository can be found here:  
+https://github.com/VladlenKaraush/SensorService
 
 Destination url by default is localhost:8080/records  
 To send request directly on server(e.g. from Postman) you should comply with following form:  
@@ -40,7 +42,7 @@ For example here's valid body:
 You can leave some parts out as long as at least one of them is present  
 Floating point values can be used.
 
-##Technologies used:
+## Technologies used:
 * Angular 6
 * Spring 5
 * Spring boot 2
