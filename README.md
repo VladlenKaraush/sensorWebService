@@ -3,10 +3,12 @@
 REST API service for accumulating sensory input.  
 Keeps only last 10 entries, automatically determines city by coordinates via google map API.  
 
+##Screenshot
+![](img/screen.jpg)
+
 ## How to run
 
-Execute init.sh script in root directory, that will build spring project, launch it and then launch angular.
-
+Execute init.sh script in root directory, that will build spring project, launch it and then launch angular.  
 REST server opens on 8080 port, angular UI on 4200 port
 
 ## Tests
@@ -23,17 +25,17 @@ Input validates on both sides: on client for more responsive experience, on serv
 Destination url by default is localhost:8080/records  
 To send request directly on server(e.g. from Postman) you should comply with following form:  
 {  
-  altitude: '(+-) [-180; 180]° [0; 60]′ [0;60]″ (NE)',  
-  longitude: '(+-) [-90; 09]° [0; 60]′ [0;60]″ (NE)',  
-  temperature: '[-100;100]'  
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;altitude: '(+-) [-180; 180]° [0; 60]′ [0;60]″ (NE)',  
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;longitude: '(+-) [-90; 09]° [0; 60]′ [0;60]″ (NE)',  
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;temperature: '[-100;100]'  
 }  
 
 For example here's valid body:  
 
 {  
-  altitude: '59.9343° 1.1′ 3.63″ N',  
-  longitude: '-10.3351° 3.22″ ',  
-  temperature: '-17'  
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;altitude: '59.9343° 1.1′ 3.63″ N',  
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;longitude: '-10.3351° 3.22″ ',  
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;temperature: '-17'  
 }  
 You can leave some parts out as long as at least one of them is present  
 Floating point values can be used.
@@ -45,5 +47,4 @@ Floating point values can be used.
 * Bootstrap 4
 * Google map API
 
-##Screenshot
-![](img/screen.jpg)
+
