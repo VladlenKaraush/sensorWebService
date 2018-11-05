@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import {Observable, of} from 'rxjs';
 import {SensorRecord} from '../record.model';
+import {ServerAccessService} from '../services/serverAccessService';
 
 @Component({
   selector: 'app-sensor-list',
@@ -11,11 +12,16 @@ import {SensorRecord} from '../record.model';
 export class SensorListComponent implements OnInit {
   list = [];
   recordsUrl = 'http://localhost:8080/records';
-  constructor(private http: HttpClient) {
+  constructor(private http: HttpClient, private server: ServerAccessService) {
   }
 
   ngOnInit() {
      this.fetchRecords();
+     this.server.recordsUpdated.subscribe(
+       (records: SensorRecord[]) => {
+         this.list = records;
+       }
+     );
   }
 
   fetchRecords () {
