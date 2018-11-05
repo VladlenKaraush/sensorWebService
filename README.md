@@ -1,27 +1,49 @@
 # SensorService
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 6.2.3.
+REST API service for accumulating sensory input.  
+Keeps only last 10 entries, automatically determines city by coordinates via google map API.  
 
-## Development server
+## How to run
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+Execute init.sh script in root directory, that will build spring project, launch it and then launch angular.
 
-## Code scaffolding
+REST server opens on 8080 port, angular UI on 4200 port
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+## Tests
 
-## Build
+Tests will execute automatically when building project
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
 
-## Running unit tests
+##Validation
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+Input validates on both sides: on client for more responsive experience, on server for validation on direct requests.
 
-## Running end-to-end tests
+##Direct server usage
 
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
+Destination url by default is localhost:8080/records  
+To send request directly on server(e.g. from Postman) you should comply with following form:  
+{  
+  altitude: '(+-) [-180; 180]° [0; 60]′ [0;60]″ (NE)',  
+  longitude: '(+-) [-90; 09]° [0; 60]′ [0;60]″ (NE)',  
+  temperature: '[-100;100]'  
+}  
 
-## Further help
+For example here's valid body:  
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+{  
+  altitude: '59.9343° 1.1′ 3.63″ N',  
+  longitude: '-10.3351° 3.22″ ',  
+  temperature: '-17'  
+}  
+You can leave some parts out as long as at least one of them is present  
+Floating point values can be used.
+
+##Technologies used:
+* Angular 6
+* Spring 5
+* Spring boot 2
+* Bootstrap 4
+* Google map API
+
+##Screenshot
+![](/Users/vladlenkaraush/prog/sensorService/img/screen.jpg)
